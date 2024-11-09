@@ -19,3 +19,9 @@ test('renders the main header', () => {
   const headerElement = screen.getByRole('heading', { level: 1 });
   expect(headerElement).toHaveTextContent("React CI/CD Demo");
 });
+
+test('renders the name Dennis Nguyen', () => {
+  render(<App />);
+  const nameElement = screen.getByText(/Name: Dennis Nguyen/i);
+  expect(nameElement).toBeInTheDocument();
+});
