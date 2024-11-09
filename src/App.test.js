@@ -25,3 +25,9 @@ test('renders the name Dennis Nguyen', () => {
   const nameElement = screen.getByText(/Name: Dennis Nguyen/i);
   expect(nameElement).toBeInTheDocument();
 });
+
+test('has App-header class in header', () => {
+  render(<App />);
+  const headerElement = screen.getByRole('banner'); // The <header> element with role="banner"
+  expect(headerElement).toHaveClass('App-header');
+});
