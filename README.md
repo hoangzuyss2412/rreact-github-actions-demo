@@ -38,8 +38,7 @@ This project includes two workflow files:
 
 To deploy to GitHub Pages:
 1. Set the `homepage` field in `package.json` to your GitHub Pages URL: `https://<username>.github.io/<repo-name>`.
-2. Go to your repository **Settings > Pages** and set the source to the `gh-pages` branch (this branch is automatically created by the deployment workflow).
-3. Deployments are triggered automatically by merging the latest code from `main` to `production`.
+2. Deployments are triggered automatically by merging the latest code from `main` to `production`.
 
 ## Local Development
 
@@ -88,7 +87,15 @@ To run the application locally:
 ## Starting Your Own CI/CD Demo
 
 To use this project as a starting point for your own CI/CD demo:
+
 1. **Fork** the repository.
 2. Update the `homepage` field in `package.json` with your own GitHub Pages URL.
 3. Customize the workflow files (`build-and-test.yml` and `jekyll-gh-pages.yml`) as needed.
-4. Experiment with the branching and deployment strategy to see GitHub Actions CI/CD in action!
+4. **Enable Branch Protection for `main` and `production`**:
+   - Go to **Settings > Branches** in your GitHub repository.
+   - Under **Branch protection rules**, click **Add branch protection rule**.
+   - For both `main` and `production`, set up these rules for best practices:
+     - **Require a pull request before merging**: Enforces review of changes.
+     - **Require status checks to pass before merging**: Ensures all CI checks (build, test, lint) must pass before merging.
+     - **Do not allow bypassing the above settings**: Prevents users from overriding these rules.
+5. Experiment with the branching and deployment strategy to see GitHub Actions CI/CD in action!
