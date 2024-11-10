@@ -22,7 +22,7 @@ test('renders the main header', () => {
 
 test('renders the name Dennis Nguyen', () => {
   render(<App />);
-  const nameElement = screen.getByText(/Name: Dennis Nguyen/i);
+  const nameElement = screen.getByText(/Author: Dennis Nguyen/i);
   expect(nameElement).toBeInTheDocument();
 });
 
