@@ -39,7 +39,9 @@ This project demonstrates a complete CI/CD pipeline for a React application usin
 ```
 ├── .github/
 │   └── workflows/
-│       └── react-ci-cd.yml
+│       └── build-and-test.yml
+│       └── jekyll-gh-pages.yml
+│
 ├── src/
 │   ├── App.jsx
 │   ├── App.test.jsx
